@@ -27,7 +27,24 @@ const Login = ({ setNevegarPagina }) => {
 
                 const jsonRespuesta = await respuesta.json();
                 console.log(jsonRespuesta);
-                // Aquí puedes agregar lógica para manejar el éxito, como redirigir o mostrar una alerta
+
+                if (jsonRespuesta.status == true) {
+
+                    window.localStorage.setItem("usuario", jsonRespuesta.descripcion.usuario)
+                    setNevegarPagina("principal")
+                }
+                else {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Error de Inicio de Sesión",
+                        text: jsonRespuesta.descripcion,
+                        timer: 3000,
+                        showConfirmButton: false,
+                        position: "top-end",
+                        timerProgressBar: true,
+                    });
+
+                }
             } catch (error) {
                 console.log(`Error: ${error}`);
 

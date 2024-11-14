@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useState } from "react"
 import Login from "./components/login";
+import Principal from './components/estruturaPrincipalChat';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       {
-        navegarpagina === "login" ? <Login setNevegarPagina={setNevegarPagina} /> : ""
+        navegarpagina === "login" ? <Login setNevegarPagina={setNevegarPagina} /> : navegarpagina === "principal" ? <Principal /> : ""
       }
 
     </>

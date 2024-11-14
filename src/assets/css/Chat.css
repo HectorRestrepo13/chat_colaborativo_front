@@ -1,0 +1,128 @@
+/* src/components/Chat.css */
+.chat {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #ededed;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-header h2 {
+  flex: 1;
+  margin: 0;
+}
+
+.chat-header-icons .icon {
+  width: 24px;
+  margin-left: 15px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #e5ddd5;
+}
+
+.message {
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.received {
+  align-self: flex-start;
+  background-color: #fff;
+}
+
+.chat-input {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #f0f0f0;
+  display: flex;
+}
+
+.chat-input button {
+  width: 14%;
+  padding: 10px;
+  margin-left: 4%;
+  border: solid 1px black;
+  border-radius: 5px;
+  background-color: rgb(210, 207, 207);
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+}
+.chat-input button:hover {
+  width: 14%;
+  padding: 10px;
+  margin-left: 4%;
+  border: solid 1px black;
+  border-radius: 5px;
+  background-color: rgb(19, 109, 3);
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.chat-input input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+}
+
+/* PARTE DONDE APARECE LA ALERTA DE QUE NO TIENE NINGUN CHAT */
+
+.no-chat-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #555;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.chat-icon {
+  width: 350px;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+.no-chat-selected h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.no-chat-selected p {
+  font-size: 16px;
+  color: #777;
+}
