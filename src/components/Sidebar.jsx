@@ -29,7 +29,7 @@ const Sidebar = ({ setChatSelecionado }) => {
             <img src={contactImg} alt="Contacto" className="chat-img" />
             <div
               onClick={() => {
-                mandarDatosDelChat("Kevin Alzate", ["todo Bien", "si claro"]);
+                mandarDatosDelChat(element.nombre, element.mensajes);
               }}
               className="chat-info"
             >
