@@ -23,7 +23,15 @@ const Chat = ({ chatSelecionado, socket }) => {
     socket.off("message");
     socket.on("message", (message) => {
       // Agregar el mensaje recibido al estado
-      setMessages((prevMessages) => [...prevMessages, message]);
+      console.log(message);
+
+      document.getElementById(
+        "contenedorMensajes"
+      ).innerHTML += `<div class="message ${
+        message.nombreUsu === datoUsuario.nombre ? "sent" : "received"
+      }">
+                    <strong>${message.nombreUsu}: </strong>${message.mensaje}
+                  </div>`;
     });
   }
 
@@ -36,6 +44,12 @@ const Chat = ({ chatSelecionado, socket }) => {
         mensaje: inputMensaje.current.value,
       };
       socket.emit("message", messageData); // Emitir el mensaje al servidor
+      // document.getElementById(
+      //   "contenedorMensajes"
+      // ).innerHTML += `<div class="message sent">
+      //               <strong>${datoUsuario.nombre}: </strong>${inputMensaje.current.value}
+      //             </div>`;
+
       inputMensaje.current.value = ""; // Limpiar el campo de entrada
     }
   };
@@ -68,7 +82,7 @@ const Chat = ({ chatSelecionado, socket }) => {
               <img src={menuIcon} alt="Menú" className="icon" />
             </div>
           </div>
-          <div className="chat-messages">
+          <div id="contenedorMensajes" className="chat-messages">
             {
               chatSelecionado.mensajes.length > 0 ? (
                 chatSelecionado.mensajes.map((dato, index) => (
