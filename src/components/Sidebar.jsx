@@ -8,7 +8,6 @@ import { useContext } from "react";
 
 const Sidebar = ({ setChatSelecionado }) => {
   const { datoUsuario, setDatoUsuario } = useContext(MiContexto); // Usamos useContext para acceder al dato
-  console.log(datoUsuario);
 
   const mandarDatosDelChat = (nombre, arregloMensajes) => {
     setChatSelecionado({
